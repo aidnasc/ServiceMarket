@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relSugestao" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e3d54a48-34f5-4b51-b477-ac3d759daf54">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM sugestao]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="sugestao" class="java.lang.String"/>
+	<field name="situacao" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="15" width="353" height="38" uuid="fb2f329b-0a53-414e-8a89-7452db351687"/>
+				<textElement>
+					<font fontName="Cooper Black" size="32"/>
+				</textElement>
+				<text><![CDATA[Relatório de Sugestão]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="16" width="202" height="38" uuid="3b554a7d-05a2-4b97-ae1e-e42b99b52814"/>
+				<imageExpression><![CDATA["..\\images\\logo_menor.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="440" y="10" width="75" height="20" uuid="7ad5f9e1-6381-4335-b936-9266ad2d9e10"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="10" width="40" height="20" uuid="667e6029-c158-4526-bea8-9e51310ce6fa"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="100" height="20" backcolor="#9999FF" uuid="db33b0df-6727-46e3-b8d8-1afb2c275ce2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Sugestão]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="8" width="355" height="20" backcolor="#9999FF" uuid="07e6410f-1efb-4fd8-8df7-60a38d53daf4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sugestão]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="8" width="100" height="20" backcolor="#9999FF" uuid="2a6a141c-ab79-43da-979e-ad37b1e1c3ac"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="8be5b766-c035-4d88-b0a5-449f212e063e"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="355" height="20" uuid="04cffdbb-c7ff-48c8-a144-9e95cdc1f1fd"/>
+				<textFieldExpression><![CDATA[$F{sugestao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="80c35fb9-21be-44ea-9d5a-ff7fcd8c78f4"/>
+				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
